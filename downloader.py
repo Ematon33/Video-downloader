@@ -2,7 +2,7 @@ import yt_dlp
 
 
 # Download the video from the given URL from youtube
-def download_video(video_url, filepath, ydl_opts=None, progress_callback=None):
+def download_video(video_url, filepath, ydl_opts, progress_callback=None):
 
     def progress_hook(d):
         """
