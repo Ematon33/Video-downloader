@@ -15,11 +15,12 @@ class GUI(CTk.CTk):
 
         # Dropdown to select file format for download, default is 'mp4'
         self.file_formats = CTk.CTkComboBox(
-            self, values=["mp4", "webm", "mkv", "mp3"], state="readonly", 
+            self,
+            state="readonly",
         )
-        self.file_formats.set("mp4")
 
-        self.av_switch = CTk.CTkSwitch(self, text="Audio/Video")
+        self.av_switch = CTk.CTkSwitch(self, text="Video/Audio")
+        self.av_switch.pack()
 
         self.url_label.pack()
         self.url_text_box.pack()
