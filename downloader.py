@@ -22,7 +22,6 @@ def download_video(video_url, filepath, ydl_opts, progress_callback=None):
 
     ydl_opts.update(
         {
-            "format": "bestvideo+bestaudio/best",  # Best video and audio
             "outtmpl": f"{filepath}/%(title)s.%(ext)s",  # Output destination
             "audioquality": "0",  # Highest quality
             "windowsfilenames": True,  # Protect file names on Windows
