@@ -7,7 +7,7 @@ class GUI(CTk.CTk):
     def __init__(self):
         CTk.CTk.__init__(self)
         self.title("Youtube Downloader")
-        self.geometry("300x150")
+        self.geometry("400x250")
 
         self.url_label = CTk.CTkLabel(self, text="Youtube URL:")
         self.url_text_box = CTk.CTkEntry(self)
