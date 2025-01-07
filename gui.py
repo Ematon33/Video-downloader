@@ -1,6 +1,6 @@
 import customtkinter as CTk
 from tkinter import filedialog
-
+import time
 
 # Class to create the GUI
 class GUI(CTk.CTk):
@@ -41,6 +41,7 @@ class GUI(CTk.CTk):
 
     def update_progress(self, fraction, eta=""):
         def _update():
+            time.sleep(0.02)
             self.progress_bar.set(fraction)
             percent = fraction * 100
             percent_text = f"{percent:.0f}%"
