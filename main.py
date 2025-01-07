@@ -11,10 +11,13 @@ def download_video_process():
 
     yt_options = file_formats.get_yt_options(app.av_switch.get(), app.file_formats.get())
 
-    t = threading.Thread(
-        target=downloader.download_video, args=(video_url, folder_path, yt_options, app.update_progress)
-    )
-    t.start()
+    # If the user has provided a URL and a folder path, start the download
+    if folder_path and video_url:
+        # Start the download in a separate thread
+        t = threading.Thread(
+            target=downloader.download_video, args=(video_url, folder_path, yt_options, app.update_progress)
+        )
+        t.start()
 
 
 def switch_event():
