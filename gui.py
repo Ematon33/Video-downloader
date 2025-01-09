@@ -13,7 +13,7 @@ class GUI(CTk.CTk):
         super().__init__()
 
         # Set the window title, size, and make it non-resizable
-        self.title("Youtube Downloader")
+        self.title("Video Downloader")
         self.geometry("450x250")
         self.resizable(False, False)
 
@@ -27,7 +27,7 @@ class GUI(CTk.CTk):
         self.main_frame.grid_columnconfigure(0, weight=1)
 
         # Create the widgets
-        self.url_label = CTk.CTkLabel(self.main_frame, text="YouTube URL:", font=CTk.CTkFont(size=14, weight="bold"))
+        self.url_label = CTk.CTkLabel(self.main_frame, text="Video URL:", font=CTk.CTkFont(size=14, weight="bold"))
         self.url_label.grid(row=0, column=0, columnspan=2, padx=5, sticky="w")
 
         # Create the text box for the URL
