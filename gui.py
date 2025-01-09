@@ -57,11 +57,11 @@ class GUI(CTk.CTk):
         # Create the progress bar
         self.progress_bar = CTk.CTkProgressBar(self.main_frame, width=300)
         self.progress_bar.set(0)  # 0 = 0 %
-        self.progress_bar.grid(row=5, column=0, columnspan=2, padx=5, pady=(0, 10), sticky="we")
+        self.progress_bar.grid(row=5, column=0, columnspan=2, padx=5, pady=(0, 2), sticky="we")
 
         # Create the progress label
-        self.progress_label = CTk.CTkLabel(self.main_frame, text="", font=CTk.CTkFont(size=12, weight="normal"))
-        self.progress_label.grid(row=6, column=0, padx=5, pady=(0, 0), sticky="w")
+        self.progress_label = CTk.CTkLabel(self.main_frame, text="", font=CTk.CTkFont(size=20, weight="bold"))
+        self.progress_label.grid(row=6, column=0, columnspan=2, padx=5, pady=(0, 0), sticky="we")
 
     def open_save_dialog(self):
         """Opens dialog to save the file"""
