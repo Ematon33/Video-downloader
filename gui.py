@@ -71,13 +71,12 @@ class GUI(CTk.CTk):
     def update_progress(self, fraction, eta=""):
         def _update():
             """ Update the progress bar and label """
-            time.sleep(0.02)
             self.progress_bar.set(fraction)
             percent = fraction * 100
             percent_text = f"{percent:.0f}%"
             self.progress_label.configure(text=f"{percent_text}")
 
-        self.after(0, _update)
+        self.after(20, _update)
 
     def download_finished(self):
         """Called when the download is finished"""
