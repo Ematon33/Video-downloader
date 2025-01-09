@@ -1,6 +1,5 @@
 import customtkinter as CTk
 from tkinter import filedialog
-import time
 
 
 # Class to create the GUI
