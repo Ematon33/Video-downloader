@@ -4,6 +4,11 @@ import threading
 import file_formats
 
 
+def cancel_download_process():
+    """Cancel the download"""
+    downloader.cancel_download()
+
+
 # Function to download the video and save it to the disk
 def download_video_process():
     video_url = app.url_text_box.get()
@@ -51,5 +56,7 @@ yt_options = switch_event()
 
 # Download button
 app.download_button.configure(command=download_video_process)
+
+app.cancel_button.configure(command=cancel_download_process)
 
 app.mainloop()

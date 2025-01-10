@@ -51,7 +51,11 @@ class GUI(CTk.CTk):
 
         # Create the download button
         self.download_button = CTk.CTkButton(self.main_frame, text="Download")
-        self.download_button.grid(row=4, column=0, columnspan=2, padx=5, pady=(0, 20), sticky="we")
+        self.download_button.grid(row=4, column=1, padx=5, pady=(0, 20), sticky="we")
+
+        # Create the cancel button
+        self.cancel_button = CTk.CTkButton(self.main_frame, text="Cancel", fg_color="grey20")
+        self.cancel_button.grid(row=4, column=0, padx=5, pady=(0, 20), sticky="we")
 
         # Create the progress bar
         self.progress_bar = CTk.CTkProgressBar(self.main_frame, width=300)
@@ -69,7 +73,7 @@ class GUI(CTk.CTk):
 
     def update_progress(self, fraction, eta=""):
         def _update():
-            """ Update the progress bar and label """
+            """Update the progress bar and label"""
             self.progress_bar.set(fraction)
             percent = fraction * 100
             percent_text = f"{percent:.0f}%"
