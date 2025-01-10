@@ -1,7 +1,7 @@
 import copy
 
-AUDIO_FORMATS = ["mp3"]
-VIDEO_FORMATS = ["mp4", "webm", "mkv"]
+AUDIO_FORMATS = ["mp3", "m4a", "wav", "ogg", "flac", "aac"]
+VIDEO_FORMATS = ["mp4", "webm", "mkv", "avi", "flv", "mov"]
 
 # Base settings for AUDIO
 AUDIO_OPTIONS = {
@@ -37,19 +37,19 @@ def get_yt_options(audio_video_switch: bool, selected_format: str) -> dict:
     if audio_video_switch:
         # Work with AUDIO_OPTIONS
         yt_opts = copy.deepcopy(AUDIO_OPTIONS)
-        # Dynamically overwrite the preferred codec according to the selected format (e.g., mp3)
-        yt_opts["postprocessors"][0]["preferredcodec"] = selected_format
+
+        # Dynamically set the format/codec depending on what the user chose:
+        for format in AUDIO_FORMATS:
+            if selected_format == format:
+                yt_opts["postprocessors"][0]["preferredcodec"] = selected_format
 
     else:
         # Work with VIDEO_OPTIONS
         yt_opts = copy.deepcopy(VIDEO_OPTIONS)
 
         # Dynamically set the format/codec depending on what the user chose:
-        if selected_format == "mp4":
-            yt_opts["postprocessors"][0]["preferedformat"] = selected_format
-        elif selected_format == "webm":
-            yt_opts["postprocessors"][0]["preferedformat"] = selected_format
-        elif selected_format == "mkv":
-            yt_opts["postprocessors"][0]["preferedformat"] = selected_format
+        for format in AUDIO_FORMATS:
+            if selected_format == format:
+                yt_opts["postprocessors"][0]["preferedformat"] = selected_format
 
     return yt_opts
