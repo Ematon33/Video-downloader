@@ -24,7 +24,7 @@ class GUI(CTk.CTk):
         # Configure the grid layout
         self.main_frame.grid_rowconfigure((0, 1, 2, 3, 4, 5, 6), weight=0)
         self.main_frame.grid_columnconfigure(0, weight=1)
-        self.main_frame.grid_columnconfigure(0, weight=1)
+        self.main_frame.grid_columnconfigure(1, weight=1)
 
         # Create the widgets
         self.url_label = CTk.CTkLabel(self.main_frame, text="Video URL:", font=CTk.CTkFont(size=14, weight="bold"))
