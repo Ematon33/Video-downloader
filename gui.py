@@ -71,13 +71,13 @@ class GUI(CTk.CTk):
         folder_path = filedialog.askdirectory(title="Select folder to save file")
         return folder_path
 
-    def update_progress(self, fraction, eta=""):
+    def update_progress(self, fraction, status=""):
         def _update():
             """Update the progress bar and label"""
             self.progress_bar.set(fraction)
             percent = fraction * 100
             percent_text = f"{percent:.0f}%"
-            self.progress_label.configure(text=f"{percent_text}")
+            self.progress_label.configure(text=f"{percent_text} {status}")
 
         self.after(20, _update)
 
