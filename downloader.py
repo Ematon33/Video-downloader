@@ -1,4 +1,6 @@
+from ast import While
 import yt_dlp
+import time
 
 # Global variable to check if the download is cancelled
 cancel_requested = False
@@ -28,8 +30,20 @@ def download_video(video_url, filepath, ydl_opts, progress_callback=None):
             fraction = downloaded / total
 
             if progress_callback:
-                progress_callback(fraction)
+                progress_callback(fraction, "downloading")
 
+        # Handle postprocessor (conversion) progress
+        elif d["status"] == "processing" or d["status"] == "started":
+            if progress_callback:
+                    progress_callback(1.0, "converting")
+                    time.sleep(0.5)
+                    progress_callback(1.0, "converting.")
+                    time.sleep(0.5)
+                    progress_callback(1.0, "converting..")
+                    time.sleep(0.5)
+                    progress_callback(1.0, "converting...")
+                    time.sleep(0.5)
+        
         elif d["status"] == "finished":
             if progress_callback:
                 progress_callback(1.0, "finished")
@@ -41,6 +55,7 @@ def download_video(video_url, filepath, ydl_opts, progress_callback=None):
             "windowsfilenames": True,  # Protect file names on Windows
             "addmetadata": True,  # Add metadata to the video
             "progress_hooks": [progress_hook],  # Progress hook
+            "postprocessor_hooks": [progress_hook],  # Postprocessor hook
         }
     )
 
