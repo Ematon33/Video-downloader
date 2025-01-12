@@ -48,7 +48,7 @@ def get_yt_options(audio_video_switch: bool, selected_format: str) -> dict:
         yt_opts = copy.deepcopy(VIDEO_OPTIONS)
 
         # Dynamically set the format/codec depending on what the user chose:
-        for format in AUDIO_FORMATS:
+        for format in VIDEO_FORMATS:
             if selected_format == format:
                 yt_opts["postprocessors"][0]["preferedformat"] = selected_format
 
