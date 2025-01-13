@@ -16,6 +16,7 @@ class GUI(CTk.CTk):
         self.title("Video Downloader")
         self.geometry("450x250")
         self.resizable(False, False)
+        self.iconbitmap("favicon.ico")
 
         # Create the main frame
         self.main_frame = CTk.CTkFrame(self, corner_radius=10)
