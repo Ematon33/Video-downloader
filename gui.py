@@ -1,5 +1,6 @@
 import customtkinter as CTk
 from tkinter import filedialog
+import utilites
 
 
 # Class to create the GUI
@@ -16,7 +17,7 @@ class GUI(CTk.CTk):
         self.title("Video Downloader")
         self.geometry("450x250")
         self.resizable(False, False)
-        self.iconbitmap("favicon.ico")
+        self.iconbitmap(utilites.resource_path("favicon.ico"))
 
         # Create the main frame
         self.main_frame = CTk.CTkFrame(self, corner_radius=10)
