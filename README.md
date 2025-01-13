@@ -5,7 +5,7 @@ A simple video downloader application with a graphical user interface (GUI) buil
 ## Features
 
 - Download videos or audio from Internet (maybe not all sites are supported).
-- Choose between different file formats.
+- Choose between different file formats (Convert can take up to several minutes).
 
 ## License
 
