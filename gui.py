@@ -53,14 +53,14 @@ class GUI(CTk.CTk):
 
         # Create the download button
         self.download_button = CTk.CTkButton(self.main_frame, text="Download")
-        self.download_button.grid(row=4, column=1, padx=5, pady=(0, 20), sticky="we")
+        self.download_button.grid(row=4, column=1, padx=5, pady=(0, 10), sticky="we")
 
         # Create the cancel button
         self.cancel_button = CTk.CTkButton(self.main_frame, text="Cancel", fg_color="grey20")
-        self.cancel_button.grid(row=4, column=0, padx=5, pady=(0, 20), sticky="we")
+        self.cancel_button.grid(row=4, column=0, padx=5, pady=(0, 10), sticky="we")
 
         # Create the progress bar
-        self.progress_bar = CTk.CTkProgressBar(self.main_frame, width=300)
+        self.progress_bar = CTk.CTkProgressBar(self.main_frame, width=300, corner_radius=0, border_width=0, height=20)
         self.progress_bar.set(0)  # 0 = 0 %
         self.progress_bar.grid(row=5, column=0, columnspan=2, padx=5, pady=(0, 2), sticky="we")
 
