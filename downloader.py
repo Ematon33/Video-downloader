@@ -58,7 +58,7 @@ def download_video(video_url, filepath, ydl_opts, progress_callback=None):
             "addmetadata": True,  # Add metadata to the video
             "progress_hooks": [progress_hook],  # Progress hook
             "postprocessor_hooks": [progress_hook],  # Postprocessor hook
-            "ffmpeg_location": utilites.resource_path("ffmpeg.exe"),  # Path to ffmpeg
+            "ffmpeg_location": "essentials\\ffmpeg.exe",  # Path to ffmpeg
         }
     )
 
