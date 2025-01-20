@@ -37,13 +37,13 @@ def download_video(video_url, filepath, ydl_opts, progress_callback=None):
         
         elif d["status"] == "processing" or d["status"] == "started":
             if progress_callback:
-                    progress_callback(1.0, "converting")
+                    progress_callback(1.0, "converting (please wait)")
                     time.sleep(0.5)
-                    progress_callback(1.0, "converting.")
+                    progress_callback(1.0, "converting. (please wait)")
                     time.sleep(0.5)
-                    progress_callback(1.0, "converting..")
+                    progress_callback(1.0, "converting.. (please wait)")
                     time.sleep(0.5)
-                    progress_callback(1.0, "converting...")
+                    progress_callback(1.0, "converting... (please wait)")
                     time.sleep(0.5)
         
         elif d["status"] == "finished":
