@@ -1,12 +1,12 @@
 import gui
-import downloader
+import fetch
 import threading
 import file_formats
 
 
 def cancel_download_process():
     """Cancel the download"""
-    downloader.cancel_download()
+    fetch.cancel_fetch()
 
 
 # Function to download the video and save it to the disk
@@ -19,9 +19,7 @@ def download_video_process():
     # If the user has provided a URL and a folder path, start the download
     if folder_path and video_url:
         # Start the download in a separate thread
-        t = threading.Thread(
-            target=downloader.download_video, args=(video_url, folder_path, yt_options, app.update_progress)
-        )
+        t = threading.Thread(target=fetch.fetch_video, args=(video_url, folder_path, yt_options, app.update_progress))
         t.start()
 
 
