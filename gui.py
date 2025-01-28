@@ -19,6 +19,8 @@ class GUI(CTk.CTk):
         self.resizable(False, False)
         self.iconbitmap(utilites.resource_path("favicon.ico"))
 
+        self.format_map = {}
+
         # Create the main frame
         self.main_frame = CTk.CTkFrame(self, corner_radius=10)
         self.main_frame.pack(fill="both", expand=True, padx=20, pady=20)
@@ -47,8 +49,8 @@ class GUI(CTk.CTk):
         self.av_switch.pack(anchor="center")
 
         # Create the file format ComboBox
-        self.file_formats = CTk.CTkComboBox(self.main_frame, values=["mp4", "mp3", "wav"], state="readonly", width=200)
-        self.file_formats.set("mp4")
+        self.file_formats = CTk.CTkComboBox(self.main_frame, state="readonly", width=200)
+        self.file_formats.set("Fill URL to get formats")
         self.file_formats.grid(row=2, column=1, padx=5, pady=(0, 20), sticky="w")
 
         # Create the download button
