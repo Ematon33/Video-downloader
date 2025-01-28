@@ -1,0 +1,2 @@
+Changed download format logic to get info about available formats from the video.
+Somesites has split audio and video formats so there will have to be added some more logic and compling options to it.
